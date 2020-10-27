@@ -19,10 +19,9 @@ function getDateAndTime() {
     now.toLocaleDateString() +
     " " +
     now.toLocaleTimeString();
-    document.getElementById("getDate").innerHTML = str;
-    setInterval(getDateAndTime, 1000);
+  document.getElementById("getDate").innerHTML = str;
+  setInterval(getDateAndTime, 1000);
 }
-
 
 //EX 2
 function isItALeapYear() {
@@ -30,7 +29,31 @@ function isItALeapYear() {
   var yes = "This is a leap year.";
   var no = "This is not a leap year.";
 
-  if (year % 400 === 0) document.getElementById("leapYear").innerHTML = yes;
-  if (year % 100 === 0) document.getElementById("leapYear").innerHTML = no;
-  return year % 4 === 0;
+  if (year % 4 == 0) 
+  {
+    if (year % 100 == 0) 
+    {
+      if (year % 400 == 0) 
+      {
+        document.getElementById("leapYear").innerHTML = yes;
+        console.log("leap true");
+      } 
+      else 
+      {
+        document.getElementById("leapYear").innerHTML = no;
+        console.log("leap false");
+      }
+    }
+    else 
+    {
+      document.getElementById("leapYear").innerHTML = yes;
+      console.log("leap true");
+    }
+  } 
+  else 
+  {
+    document.getElementById("leapYear").innerHTML = no;
+    console.log("leap false");
+  }
+
 }
