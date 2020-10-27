@@ -13,7 +13,8 @@ function getDateAndTime() {
   );
 
   var now = new Date();
-  str =
+  str = 
+    "Current time: " +
     days[now.getDay()] +
     " " +
     now.toLocaleDateString() +
@@ -29,31 +30,33 @@ function isItALeapYear() {
   var yes = "This is a leap year.";
   var no = "This is not a leap year.";
 
-  if (year % 4 == 0) 
-  {
-    if (year % 100 == 0) 
-    {
-      if (year % 400 == 0) 
-      {
+  if (year > null) {
+    if (year % 4 == 0) {
+      if (year % 100 == 0) {
+        if (year % 400 == 0) {
+          document.getElementById("leapYear").innerHTML = yes;
+          document.getElementById("leapYear").style.color = "#333";
+          console.log("leap true");
+        } else {
+          document.getElementById("leapYear").innerHTML = no;
+          document.getElementById("leapYear").style.color = "red";
+          console.log("leap false");
+        }
+      } else {
         document.getElementById("leapYear").innerHTML = yes;
+        document.getElementById("leapYear").style.color = "#333";
         console.log("leap true");
-      } 
-      else 
-      {
-        document.getElementById("leapYear").innerHTML = no;
-        console.log("leap false");
       }
+    } else {
+      document.getElementById("leapYear").innerHTML = no;
+      document.getElementById("leapYear").style.color = "red";
+      console.log("leap false");
     }
-    else 
-    {
-      document.getElementById("leapYear").innerHTML = yes;
-      console.log("leap true");
-    }
-  } 
-  else 
-  {
-    document.getElementById("leapYear").innerHTML = no;
-    console.log("leap false");
+  } else {
+    document.getElementById("leapYear").innerHTML = "Not a valid input.";
+    document.getElementById("leapYear").style.color = "red";
   }
-
 }
+
+//EX 3
+function isItASunday() {}

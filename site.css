@@ -5,6 +5,7 @@
   margin-right: auto;
   margin-bottom: 2px;
   margin-top: 2px;
+  border-radius: 3px;
 }
 
 .col-lg-12 p {
@@ -20,10 +21,38 @@
 
 .col-lg-2 {
   padding-left: 0px;
+  border-radius: 3px;
 }
 
 .col-lg-10 {
   padding: 20px;
+  border-radius: 3px;
+}
+
+input {
+  border-radius: 3px;
+}
+
+button {
+  background-color: #193e55;
+  color: #eebd1e;
+  border-style: none;
+  display: inline-block;
+  padding: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 3px;
+  outline: 0px;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: #255877;
+  color: #d4d127;
+}
+
+button:after {
+  border: none;
 }
 
 ul {
@@ -32,6 +61,7 @@ ul {
   padding: 0;
   width: 150px;
   background-color: #193e55;
+  border-radius: 3px;
 }
 
 li a {
@@ -45,6 +75,7 @@ li a {
 li a:hover {
   background-color: #4a78b4;
   text-decoration: none;
+  border-radius: 3px;
   color: #c2eed1;
 }
 
