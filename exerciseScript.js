@@ -76,3 +76,40 @@ function isItASunday() {
     console.log("date: " + date);
   }
 }
+
+//EX 4
+var lives;
+var randomNumber;
+
+function generateNumber() {
+    randomNumber = Math.floor(Math.random() * 10);
+    lives = 5;
+
+    document.getElementById("lives").innerHTML = "Lives left: " + lives;
+    document.getElementById("outcome").innerHTML = ' ';
+    console.log(randomNumber);
+
+}
+
+function guessingGame() {
+        var guess = document.getElementById("guess").value;
+        console.log(guess);
+
+        if (randomNumber == guess - 1){
+            document.getElementById("outcome").innerHTML = "CORRECT! You've won!";
+        }
+        else if (lives == 1){
+            document.getElementById("outcome").innerHTML = "GAME OVER. You've lost all your lives.";
+            livesCounter()
+        }
+        else{
+            document.getElementById("outcome").innerHTML = "Wrong. Try again.";
+            livesCounter()
+        }
+ 
+}
+
+function livesCounter() {
+   lives = lives - 1
+   document.getElementById("lives").innerHTML = "Lives left: " + lives;
+}
