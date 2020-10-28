@@ -162,3 +162,10 @@ function strOutcomes() {
 }
 
 //EX 8
+function alphabeticalOrder() {
+    var word = document.getElementById("input").value;
+    var char = word.split("");
+    var inOrder = char.sort().join("");
+
+    document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + inOrder;
+}
