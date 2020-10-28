@@ -113,3 +113,21 @@ function livesCounter() {
    lives = lives - 1
    document.getElementById("lives").innerHTML = "Lives left: " + lives;
 }
+
+//EX 5
+function daysUntilChristmas() {
+    var today = new Date();
+    var christmas = new Date(today.getFullYear(), 11, 24);
+
+    if (today.getMonth()==11 && today.getDate()>25) 
+    {
+    christmas.setFullYear(christmas.getFullYear()+1); 
+    }  
+    var one_day=1000*60*60*24;
+    var days = Math.ceil((christmas.getTime()-today.getTime())/(one_day));
+    
+    document.getElementById("daysLeft").innerHTML = days + " days left until Christmas!";
+
+    console.log("today" + today);
+    console.log("christmas" + christmas);
+}
