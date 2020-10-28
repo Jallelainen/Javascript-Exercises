@@ -10,7 +10,7 @@
 
 .col-lg-12 p {
   color: #eebd1e;
-  padding: 10px;
+  padding: 20px;
 }
 
 .col-lg-9 {
@@ -127,4 +127,9 @@ li a:hover {
 
 .glyphicon {
   color: #eebd1e;
+}
+
+p{
+  padding: 0px;
+  margin: 0px;
 }

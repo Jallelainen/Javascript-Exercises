@@ -13,7 +13,7 @@ function getDateAndTime() {
   );
 
   var now = new Date();
-  str = 
+  str =
     "Current time: " +
     days[now.getDay()] +
     " " +
@@ -59,4 +59,20 @@ function isItALeapYear() {
 }
 
 //EX 3
-function isItASunday() {}
+function isItASunday() {
+  var year = document.getElementById("myYear").value;
+  var date = new Date();
+  date.setFullYear(year, 0, 1);
+
+  if (date.getDay() == 0) {
+    document.getElementById("isIt").innerHTML = "This is a Sunday!";
+    document.getElementById("isIt").style.color = "darkgreen";
+    console.log("sunday true");
+    console.log("date: " + date);
+  } else {
+    document.getElementById("isIt").innerHTML = "This is not a Sunday..";
+    document.getElementById("isIt").style.color = "#333";
+    console.log("sunday false");
+    console.log("date: " + date);
+  }
+}
