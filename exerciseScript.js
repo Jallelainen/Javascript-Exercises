@@ -131,3 +131,12 @@ function daysUntilChristmas() {
     console.log("today" + today);
     console.log("christmas" + christmas);
 }
+
+//EX 6
+function theReverser() {
+    var str = document.getElementById("input").value;
+
+    var reversed = str.split("").reverse().join("");
+    document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + reversed;
+
+}
