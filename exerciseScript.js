@@ -82,61 +82,83 @@ var lives;
 var randomNumber;
 
 function generateNumber() {
-    randomNumber = Math.floor(Math.random() * 10);
-    lives = 5;
+  randomNumber = Math.floor(Math.random() * 10);
+  lives = 5;
 
-    document.getElementById("lives").innerHTML = "Lives left: " + lives;
-    document.getElementById("outcome").innerHTML = ' ';
-    console.log(randomNumber);
-
+  document.getElementById("lives").innerHTML = "Lives left: " + lives;
+  document.getElementById("outcome").innerHTML = " ";
+  console.log(randomNumber);
 }
 
 function guessingGame() {
-        var guess = document.getElementById("guess").value;
-        console.log(guess);
+  var guess = document.getElementById("guess").value;
+  console.log(guess);
 
-        if (randomNumber == guess - 1){
-            document.getElementById("outcome").innerHTML = "CORRECT! You've won!";
-        }
-        else if (lives == 1){
-            document.getElementById("outcome").innerHTML = "GAME OVER. You've lost all your lives.";
-            livesCounter()
-        }
-        else{
-            document.getElementById("outcome").innerHTML = "Wrong. Try again.";
-            livesCounter()
-        }
- 
+  if (randomNumber == guess - 1) {
+    document.getElementById("outcome").innerHTML = "CORRECT! You've won!";
+  } else if (lives == 1) {
+    document.getElementById("outcome").innerHTML =
+      "GAME OVER. You've lost all your lives.";
+    livesCounter();
+  } else {
+    document.getElementById("outcome").innerHTML = "Wrong. Try again.";
+    livesCounter();
+  }
 }
 
 function livesCounter() {
-   lives = lives - 1
-   document.getElementById("lives").innerHTML = "Lives left: " + lives;
+  lives = lives - 1;
+  document.getElementById("lives").innerHTML = "Lives left: " + lives;
 }
 
 //EX 5
 function daysUntilChristmas() {
-    var today = new Date();
-    var christmas = new Date(today.getFullYear(), 11, 24);
+  var today = new Date();
+  var christmas = new Date(today.getFullYear(), 11, 24);
 
-    if (today.getMonth()==11 && today.getDate()>25) 
-    {
-    christmas.setFullYear(christmas.getFullYear()+1); 
-    }  
-    var one_day=1000*60*60*24;
-    var days = Math.ceil((christmas.getTime()-today.getTime())/(one_day));
-    
-    document.getElementById("daysLeft").innerHTML = days + " days left until Christmas!";
+  if (today.getMonth() == 11 && today.getDate() > 25) {
+    christmas.setFullYear(christmas.getFullYear() + 1);
+  }
+  var one_day = 1000 * 60 * 60 * 24;
+  var days = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
 
-    console.log("today" + today);
-    console.log("christmas" + christmas);
+  document.getElementById("daysLeft").innerHTML =
+    days + " days left until Christmas!";
+
+  console.log("today" + today);
+  console.log("christmas" + christmas);
 }
 
 //EX 6
 function theReverser() {
-    var str = document.getElementById("input").value;
+  var str = document.getElementById("input").value;
 
-    var reversed = str.split("").reverse().join("");
-    document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + reversed;
-
+  var reversed = str.split("").reverse().join("");
+  document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + reversed;
 }
+
+//EX 7
+function strOutcomes() {
+  document.getElementById("outcomes").innerHTML = "Outcomes: ";
+  var input = document.getElementById("input").value;
+  var char = input.split("");
+  var paragraph = document.getElementById("outcomes");
+  var next;
+  console.log(char);
+
+  for (i = 0; i < char.length; i++) {
+    next = char[i];
+    paragraph.textContent += next;
+    paragraph.textContent += ", ";
+    console.log("1:" + next);
+
+    for (k = i + 1; k < char.length; k++) {
+      next = next + char[k];
+      paragraph.textContent += next;
+      paragraph.textContent += ", ";
+      console.log("2:" + next);
+    }
+  }
+}
+
+//EX 8
