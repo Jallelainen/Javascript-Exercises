@@ -123,7 +123,7 @@ function daysUntilChristmas() {
   var days = Math.ceil((christmas.getTime() - today.getTime()) / one_day);
 
   document.getElementById("daysLeft").innerHTML =
-    days + " days left until Christmas!";
+    "There are " + days + " days left until Christmas!";
 
   console.log("today" + today);
   console.log("christmas" + christmas);
@@ -163,9 +163,31 @@ function strOutcomes() {
 
 //EX 8
 function alphabeticalOrder() {
-    var word = document.getElementById("input").value;
-    var char = word.split("");
-    var inOrder = char.sort().join("");
+  var word = document.getElementById("input").value;
+  var char = word.split("");
+  var inOrder = char.sort().join("");
 
-    document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + inOrder;
+  document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + inOrder;
+}
+
+//EX 9
+function wordManipulator() {
+  var sentence = document.getElementById("input").value;
+  var words = sentence.split(" ");
+  var longest = 0;
+  var longWord;
+  var newSentence = sentence[0].toUpperCase() + sentence.substring(1);
+  console.log(words.length);
+
+  for (i = 0; i < words.length; i++) {
+    if (words[i].length > longest) {
+      longWord = words[i];
+      longest = words[i].length;
+    }
+  }
+
+  document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + newSentence;
+    document.getElementById("outcome2").innerHTML = "<b>Longest word: </b>" + longWord;
+  console.log(longest);
+  console.log(longWord);
 }
