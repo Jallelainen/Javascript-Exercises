@@ -228,8 +228,14 @@ function primeNumber() {
 
 //EX 11
 function whatType() {
-    var type = document.getElementById("input").type;
-    console.log(type);
+    var type = document.getElementById("input").value;
+    console.log(type.type);
+
+    if(isNaN(type)){
+      document.getElementById("outcome").innerHTML = "<b>Type: </b>string.";
+    }else{
+      document.getElementById("outcome").innerHTML = "<b>Type: </b>integer.";
+    }
 }
 
 //EX 12
