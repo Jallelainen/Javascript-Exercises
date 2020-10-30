@@ -186,8 +186,71 @@ function wordManipulator() {
     }
   }
 
-  document.getElementById("outcome").innerHTML = "<b>Outcome: </b>" + newSentence;
-    document.getElementById("outcome2").innerHTML = "<b>Longest word: </b>" + longWord;
+  document.getElementById("outcome").innerHTML =
+    "<b>Outcome: </b>" + newSentence;
+  document.getElementById("outcome2").innerHTML =
+    "<b>Longest word: </b>" + longWord;
   console.log(longest);
   console.log(longWord);
 }
+
+//EX 10 
+function primeNumber() {
+  var n = document.getElementById("input").value;
+  var isPrime = true;
+
+  if (n == 1) {
+    document.getElementById("outcome").innerHTML =
+      "This is not a prime number.";
+    document.getElementById("outcome").style.color = "red";
+    console.log("prime false");
+  } else if (n == 2) {
+    document.getElementById("outcome").innerHTML = "This is a prime number!";
+    document.getElementById("outcome").style.color = "#333";
+    console.log("prime true");
+  } else {
+    for (var x = 2; x < n; x++) {
+      if (n % x == 0) {
+        document.getElementById("outcome").innerHTML =
+          "This is not a prime number.";
+        document.getElementById("outcome").style.color = "red";
+        console.log("prime false");
+        isPrime = false;
+      }
+    }
+    if (isPrime == true) {
+      document.getElementById("outcome").innerHTML = "This is a prime number!";
+      document.getElementById("outcome").style.color = "#333";
+      console.log("prime true");
+    }
+  }
+}
+
+//EX 11
+function whatType() {
+    var type = document.getElementById("input").type;
+    console.log(type);
+}
+
+//EX 12
+function loop15() {
+  var num = 0;
+  var i;
+
+  for (i = 0; i < 15; i++) {
+    num++;
+    if (num % 2 == 0) {
+      console.log("even");
+      var para = document.createElement("P");
+      para.innerHTML = num + " is even.";
+      document.getElementById("evenOdd").appendChild(para);
+    } else {
+      console.log("odd");
+      var para = document.createElement("P");
+      para.innerHTML = num + " is odd.";
+      document.getElementById("evenOdd").appendChild(para);
+    }
+  }
+}
+
+//EX 13
