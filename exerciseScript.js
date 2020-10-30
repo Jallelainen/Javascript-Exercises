@@ -194,7 +194,7 @@ function wordManipulator() {
   console.log(longWord);
 }
 
-//EX 10 
+//EX 10
 function primeNumber() {
   var n = document.getElementById("input").value;
   var isPrime = true;
@@ -228,14 +228,14 @@ function primeNumber() {
 
 //EX 11
 function whatType() {
-    var type = document.getElementById("input").value;
-    console.log(type.type);
+  var type = document.getElementById("input").value;
+  console.log(type.type);
 
-    if(isNaN(type)){
-      document.getElementById("outcome").innerHTML = "<b>Type: </b>string.";
-    }else{
-      document.getElementById("outcome").innerHTML = "<b>Type: </b>integer.";
-    }
+  if (isNaN(type)) {
+    document.getElementById("outcome").innerHTML = "<b>Type: </b>string.";
+  } else {
+    document.getElementById("outcome").innerHTML = "<b>Type: </b>integer.";
+  }
 }
 
 //EX 12
@@ -264,8 +264,8 @@ function happyNum() {
   var num = 1;
   var numArr = ("" + num).split("");
 
-  for(var i = 0; i < numArr.length; i++){
-    numArr[i]**2
+  for (var i = 0; i < numArr.length; i++) {
+    numArr[i] ** 2;
   }
 
   console.log(numArr);
@@ -276,6 +276,11 @@ function intoaString() {
   var days = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
   var str = days.join(", ");
 
-  document.getElementById("outcome").innerHTML = str + " are workdays."
-  
+  document.getElementById("outcome").innerHTML = str + " are workdays.";
+}
+
+//EX 15
+function sizeOrder() {
+  var nums = new Array(4, 5, 2, 9, -1, 11);
+  document.getElementById("outcome").innerHTML = "Array[" + nums.sort(function(a, b){return a-b}).join(", ") + "]";
 }
