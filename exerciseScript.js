@@ -260,3 +260,22 @@ function loop15() {
 }
 
 //EX 13
+function happyNum() {
+  var num = 1;
+  var numArr = ("" + num).split("");
+
+  for(var i = 0; i < numArr.length; i++){
+    numArr[i]**2
+  }
+
+  console.log(numArr);
+}
+
+//EX 14
+function intoaString() {
+  var days = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+  var str = days.join(", ");
+
+  document.getElementById("outcome").innerHTML = str + " are workdays."
+  
+}
